@@ -35,8 +35,9 @@ class TestRegistrationWithWrongPassword:
         driver.find_element(*Locators.EMAIL).send_keys(email)
         driver.find_element(*Locators.PASSWORD).send_keys('36987')
         driver.find_element(*Locators.REGISTER_BUTTON).click()
-        reg_text = WebDriverWait(driver, 10).until(EC.visibility_of_element_located(Locators.REGISTRATION))
-        # assert reg_text == 'Некорректный пароль'
-        assert reg_text == register_endpoint
+        # reg_text = WebDriverWait(driver, 10).until(EC.visibility_of_element_located(Locators.REGISTRATION))
+        reg_text = WebDriverWait(driver, 10).until(EC.text_to_be_present_in_element(Locators.FAILED)).text
+        assert reg_text == 'Некорректный пароль'
+        # assert reg_text == register_endpoint
 
 

@@ -20,5 +20,11 @@ class TestEntryWithButtonloginToAccount:
 class TestEntryWithButtonPersonalAccount:
     def test_success_entry(self, driver):
         driver.find_element(*Locators.PERSONAL_ACCAUNT).click()
-        WebDriverWait(driver, 10).until(EC.visibility_of_element_located(Locators.PROFILE))
-        assert driver.current_url == profile_endpoint
+        WebDriverWait(driver, 10).until(EC.visibility_of_element_located(Locators.ORDER))
+        driver.find_element(*Locators.EMAIL).send_keys(Credentials.email)
+        driver.find_element(*Locators.PASSWORD).send_keys(Credentials.password)
+        driver.find_element(*Locators.ENTRY_BUTTON).click()
+        WebDriverWait(driver, 10).until(EC.visibility_of_element_located(Locators.ORDER_BUTTON))
+        assert driver.current_url == main_site + '/'
+
+

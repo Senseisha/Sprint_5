@@ -23,17 +23,10 @@ def driver():
     yield browser
     browser.quit()
 
-#Фикстура для входа в аккаунт
+#Фикстура для авторизации пользователя
 # @pytest.fixture
-# def registrarion():
-#     options = Options()
-#     options.add_argument("--window-size=1200,600")
-#     browser = webdriver.Chrome(options=options)
-#     browser.get(register_endpoint)
-#
-#     # driver.find_element(*Locators.ACCAUNT_BUTTON).click()
-#     # WebDriverWait(driver, 10).until(EC.visibility_of_element_located(Locators.NAME))
-#     # driver.find_element(*Locators.NEW_USER).click()
-#     # WebDriverWait(driver, 10).until(EC.visibility_of_element_located(Locators.REGISTERATION))
-#     yield browser
-#     browser.quit()
+# def login(driver):
+#     driver.find_element(*Locators.EMAIL).send_keys(Credentials.email)
+#     driver.find_element(*Locators.PASSWORD).send_keys(Credentials.password)
+#     driver.find_element(*Locators.ENTRY_BUTTON).click()
+
