@@ -9,7 +9,7 @@ from curl import *
 
 class TestRegistrationWithNewCredentials:
     def test_success_registration(self, driver):
-        driver.find_element(*Locators.ACCAUNT_BUTTON).click()
+        driver.find_element(*Locators.ACCOUNT_BUTTON).click()
         WebDriverWait(driver, 10).until(EC.visibility_of_element_located(Locators.EMAIL))
         driver.find_element(*Locators.NEW_USER).click()
         WebDriverWait(driver, 10).until(EC.visibility_of_element_located(Locators.REGISTRATION))
@@ -25,7 +25,7 @@ class TestRegistrationWithNewCredentials:
 
 class TestRegistrationWithWrongPassword:
     def test_failed_registration(self, driver):
-        driver.find_element(*Locators.ACCAUNT_BUTTON).click()
+        driver.find_element(*Locators.ACCOUNT_BUTTON).click()
         WebDriverWait(driver, 10).until(EC.visibility_of_element_located(Locators.EMAIL))
         driver.find_element(*Locators.NEW_USER).click()
         WebDriverWait(driver, 10).until(EC.visibility_of_element_located(Locators.REGISTRATION))

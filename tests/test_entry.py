@@ -9,7 +9,7 @@ from curl import *
 
 class TestEntryWithButtonloginToAccount:
     def test_success_entry(self, driver):
-        driver.find_element(*Locators.ACCAUNT_BUTTON).click()
+        driver.find_element(*Locators.ACCOUNT_BUTTON).click()
         WebDriverWait(driver, 10).until(EC.visibility_of_element_located(Locators.REGISTER_WAIT))
         driver.find_element(*Locators.EMAIL).send_keys(Credentials.email)
         driver.find_element(*Locators.PASSWORD).send_keys(Credentials.password)
@@ -29,7 +29,7 @@ class TestEntryWithButtonPersonalAccount:
 
 class TestEntryWithButtonRegistrationForm:
     def test_success_entry(self, driver):
-        driver.find_element(*Locators.ACCAUNT_BUTTON).click()
+        driver.find_element(*Locators.ACCOUNT_BUTTON).click()
         WebDriverWait(driver, 10).until(EC.visibility_of_element_located(Locators.ORDER_TEXT))
         driver.find_element(*Locators.NEW_USER).click()
         WebDriverWait(driver, 10).until(EC.visibility_of_element_located(Locators.REGISTRATION))
@@ -43,7 +43,7 @@ class TestEntryWithButtonRegistrationForm:
 
 class TestEntryWithButtonRecoveryPassword:
     def test_success_entry(self, driver):
-        driver.find_element(*Locators.ACCAUNT_BUTTON).click()
+        driver.find_element(*Locators.ACCOUNT_BUTTON).click()
         WebDriverWait(driver, 10).until(EC.visibility_of_element_located(Locators.ORDER_TEXT))
         driver.find_element(*Locators.PASSWORD_RECOVERY).click()
         WebDriverWait(driver, 10).until(EC.visibility_of_element_located(Locators.PASSWORD_RECOVERY_TEXT))
