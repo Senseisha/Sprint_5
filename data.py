@@ -1,4 +1,4 @@
 class Credentials:
-    name = 'Kate'
-    email = 'kate@ya.ru'
-    password = '258961'
+    name = 'Anastasia'
+    email = 'NastyaTroitskaya13777@ya.ru'
+    password = '3579541'

@@ -10,7 +10,7 @@ from curl import *
 class TestEntryWithButtonloginToAccount:
     def test_success_entry(self, driver):
         driver.find_element(*Locators.ACCOUNT_BUTTON).click()
-        WebDriverWait(driver, 10).until(EC.visibility_of_element_located(Locators.REGISTER_WAIT))
+        WebDriverWait(driver, 10).until(EC.visibility_of_element_located(Locators.ORDER_TEXT))
         driver.find_element(*Locators.EMAIL).send_keys(Credentials.email)
         driver.find_element(*Locators.PASSWORD).send_keys(Credentials.password)
         driver.find_element(*Locators.ENTRY_BUTTON).click()

@@ -19,7 +19,7 @@ class TestRegistrationWithNewCredentials:
         driver.find_element(*Locators.EMAIL).send_keys(email)
         driver.find_element(*Locators.PASSWORD).send_keys(password)
         driver.find_element(*Locators.REGISTER_BUTTON).click()
-        WebDriverWait(driver, 10).until(EC.visibility_of_element_located(Locators.REGISTER_WAIT))
+        WebDriverWait(driver, 10).until(EC.visibility_of_element_located(Locators.ORDER_TEXT))
         assert driver.current_url == auth_endpoint
 
 
@@ -35,9 +35,7 @@ class TestRegistrationWithWrongPassword:
         driver.find_element(*Locators.EMAIL).send_keys(email)
         driver.find_element(*Locators.PASSWORD).send_keys('36987')
         driver.find_element(*Locators.REGISTER_BUTTON).click()
-        # reg_text = WebDriverWait(driver, 10).until(EC.visibility_of_element_located(Locators.REGISTRATION))
-        reg_text = WebDriverWait(driver, 10).until(EC.text_to_be_present_in_element(Locators.FAILED)).text
+        reg_text = WebDriverWait(driver, 10).until(EC.visibility_of_element_located(Locators.FAILED)).text
         assert reg_text == 'Некорректный пароль'
-        # assert reg_text == register_endpoint
 
 
