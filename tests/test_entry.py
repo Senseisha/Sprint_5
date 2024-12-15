@@ -16,6 +16,7 @@ class TestEntryWithButtonloginToAccount:
         WebDriverWait(driver, 10).until(EC.visibility_of_element_located(Locators.ORDER_BUTTON))
         assert driver.current_url == main_site + '/'
 
+
 class TestEntryWithButtonPersonalAccount:
     def test_success_entry(self, driver):
         driver.find_element(*Locators.PERSONAL_ACCAUNT).click()
@@ -25,6 +26,7 @@ class TestEntryWithButtonPersonalAccount:
         driver.find_element(*Locators.ENTRY_BUTTON).click()
         WebDriverWait(driver, 10).until(EC.visibility_of_element_located(Locators.ORDER_BUTTON))
         assert driver.current_url == main_site + '/'
+
 
 class TestEntryWithButtonRegistrationForm:
     def test_success_entry(self, driver):
@@ -39,6 +41,7 @@ class TestEntryWithButtonRegistrationForm:
         driver.find_element(*Locators.ENTRY_BUTTON).click()
         WebDriverWait(driver, 10).until(EC.visibility_of_element_located(Locators.ORDER_BUTTON))
         assert driver.current_url == main_site + '/'
+
 
 class TestEntryWithButtonRecoveryPassword:
     def test_success_entry(self, driver):

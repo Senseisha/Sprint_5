@@ -4,6 +4,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from locators import Locators
 from curl import *
 
+
 class TestExit:
     def test_success_exit(self, login):
         driver = login

@@ -1,21 +1,17 @@
 from locators import Locators
 
 
-class TestChapterBun:
-    def test_test_success_transition(self, driver):
+class TestNavigationBetweenSections:
+    def test_success_navigation_to_chapter_bun(self, driver):
         driver.find_element(*Locators.FILLINGS).click()
         driver.find_element(*Locators.BUN).click()
         assert driver.find_element(*Locators.CHAPTER_BUN).text == 'Булки'
 
-
-class TestChapterSauces:
-    def test_test_success_transition(self, driver):
+    def test_success_navigation_to_chapter_sauses(self, driver):
         driver.find_element(*Locators.SAUCES).click()
         assert driver.find_element(*Locators.CHAPTER_SAUCES).text == 'Соусы'
 
-
-class TestChapterFillings:
-    def test_test_success_transition(self, driver):
+    def test_success_navigation_to_chapter_fillings(self, driver):
         driver.find_element(*Locators.FILLINGS).click()
         assert driver.find_element(*Locators.CHAPTER_FILLINGS).text == 'Начинки'
 
